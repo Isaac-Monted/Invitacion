@@ -1,0 +1,91 @@
+@import url('var_colores.css');
+
+.corazon {
+    position: relative;
+    width: 200px; /* Ancho */
+    height: 200px; /* Altura */
+    transform: rotate(-45deg);
+    background-color: var(--rojo);
+    top: 100px;  /* Ajustamos para poner el texto más arriba */
+    margin: 50px;
+    animation: pulso 3s infinite; /* Animación de pulso */
+  }
+  .corazon:before, .corazon:after {
+    content: '';
+    position: absolute;
+    width: 200px; /* Tamaño de los círculos */
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--rojo);
+  }
+  .corazon:before {
+    left: 100px; /* Posición de los círculos */
+    top: 0;
+  }
+  .corazon:after {
+    left: 0;
+    top: -100px;
+  }
+
+#Contenedor_corazon {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--deep_fondo_pagina);
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+#Fecha_evento {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center; /* Centrar el texto */
+    color: var(--blanco); /* Color del texto */
+    font-size: 50px; /* Tamaño del texto */
+    font-weight: bold; /* Estilo del texto */
+    top: -170px;  /* Ajustamos para poner el texto más arriba */
+    animation: pulso 1s infinite; /* Animación de pulso */
+    z-index: 10;
+    text-shadow: 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco); /* Brillo inicial */
+    animation: iluminar 3s infinite, pulsoTexto 3s infinite; /* Animación para iluminar y pulsar el texto */
+}
+
+  /* Animación de pulso */
+  @keyframes pulso {
+    0% {
+        transform: rotate(-45deg) scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: rotate(-45deg) scale(1.2); /* Aumenta el tamaño */
+    }
+    100% {
+        transform: rotate(-45deg) scale(1); /* Vuelve al tamaño original */
+    }
+}
+
+/* Animación de iluminación del texto */
+@keyframes iluminar {
+    0% {
+      text-shadow: 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco); /* Brillo normal */
+    }
+    50% {
+      text-shadow: 0 0 15px var(--blanco), 0 0 25px var(--blanco), 0 0 35px var(--blanco), 0 0 45px var(--blanco); /* Brillo fuerte */
+    }
+    100% {
+      text-shadow: 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco); /* Regresa al brillo normal */
+    }
+  }
+
+  /* Animación de pulso para el texto */
+  @keyframes pulsoTexto {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

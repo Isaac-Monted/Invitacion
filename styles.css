@@ -1,0 +1,74 @@
+@import url('var_colores.css');
+
+.Adorno_header {
+    width: 100vh;
+    background-color: var(--deep_main); /* El color que deseas */
+    -webkit-mask-image: url('./assets/Header.png'); /* URL de tu imagen */
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: url('./assets/Header.png');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+}
+
+.Adorno_footer {
+    width: 100vh;
+    background-color: var(--deep_main); /* El color que deseas */
+    -webkit-mask-image: url('./assets/Footer.png'); /* URL de tu imagen */
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: url('./assets/Footer.png');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+}
+
+.fondo_main {
+    background-color: var(--Main); /* Fondo para visualizar mejor */
+}
+
+.tamano_pantalla_completa {
+    height: 100vh; /* Contenedor ocupa toda la ventana */
+}
+
+.contenedor_horizontal {
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    flex-direction: row; /* Organiza los elementos en una columna */
+    align-items: center; /* Alinea el contenido verticalmente */
+    padding: 20px; /* Espaciado interior */
+    box-sizing: border-box; /* Ajuste para incluir padding y bordes en el tamaño */
+}
+
+.contenedor_vertical {
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea el contenido verticalmente */
+    box-sizing: border-box; /* Ajuste para incluir padding y bordes en el tamaño */
+}
+
+.contenedor_centralizado {
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    box-sizing: border-box;
+}
+
+.text_align_center {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column;
+}
+
+.contenido {
+    font-family: 'Edwardian Script ITC';
+    font-size: 90px;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.foto {
+    width: 2vh;
+}

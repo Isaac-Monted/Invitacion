@@ -1,0 +1,30 @@
+@import url('var_colores.css');
+
+body {
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding: 0; /* Opcional, elimina el relleno predeterminado si lo hay */
+    box-sizing: border-box; /* Asegura un cálculo consistente del tamaño */
+}
+
+main {
+    background-color: var(--fondo_pagina);
+    padding: 40px;
+    display: flex; /* Activa Flexbox */
+    flex-direction: column;
+    font-family: 'Lucida Calligraphy';
+    font-size: 25px;
+}
+
+footer {
+    background-color: #87b3ae;
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea el contenido verticalmente */
+    flex-direction: row;
+    font-family: 'vivaldi';
+    font-size: 25px;
+}
+
+p {
+    color: black;
+}

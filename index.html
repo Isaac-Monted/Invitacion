@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento HTML Básico</title>
+    <title>Estas Cordialmente Invitado</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="elementals.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="figuras.css"> <!-- Vinculamos el archivo CSS -->
 </head>
 <body>
     <header>
-        <h1>¡Bienvenido a mi página web!</h1>
+        <div class="contenedor_vertical fondo_main tamano_pantalla_completa">
+            <img class="Adorno_header" src="./assets/Header.png" alt="Adorno Cabeza">
+            <h1 class= "contenido" >¡Alejandra & Isaac!</h1>
+            <img class="Adorno_footer" src="./assets/Footer.png" alt="Adorno Pies">
+        </div>
     </header>
     <main>
-        <p>Esto es un ejemplo de un documento HTML básico.</p>
+        <section class="contenedor_centralizado" id="Contenedor_corazon">
+            <div class="corazon"></div>
+            <span id="Fecha_evento">Nos casamos este <br>15 de Noviembre</span>
+        </section>
+        <section>
+            <h2 class="text_align_center">Acompañanos en nuestra celebración</h2>
+            <h3>Despues de tantas aventuras juntos decidimos estar juntos</h3>
+            <div id="Historia"></div>
+            <div>
+                <img class="foto" src='./assets/fotos/dinos3.jpg'>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2025 Mi Sitio Web</p>
+        <p>&copy; Alejandra & Isaac 15-11-2025</p>
     </footer>
+
+    <script src="main.js"></script> <!-- Archivo JavaScript -->
 </body>
 </html>
