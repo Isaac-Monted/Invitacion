@@ -23,7 +23,20 @@
 }
 
 .fondo_main {
+    position: relative;
     background-color: var(--Main); /* Fondo para visualizar mejor */
+    overflow: hidden;
+    box-shadow: 10px 20px 10px rgba(65, 64, 64, 0.596);
+}
+
+.luciernaga {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: volar 5s infinite;
+    opacity: 0;
 }
 
 .tamano_pantalla_completa {
@@ -69,6 +82,58 @@
     text-align: center;
 }
 
+.rotacion_izquierda {
+    position: absolute;
+    transform: rotate(-25deg);
+    left: 6vw;
+}
+
+.rotacion_derecha{
+    position: absolute;
+    transform: rotate(25deg);
+    right: 6vw;
+}
+
 .foto {
-    width: 2vh;
+    width: 10vw;
+    border: 10px solid var(--blanco); /* Borde blanco similar a una foto antigua */
+    box-shadow: 10px 10px 20px rgba(65, 64, 64, 0.596); /* Sombra suave para simular que está encimada */
+    padding: 5px; /* Espacio interno para simular un borde más grueso */
+    background-color: var(--Dorado); /* Fondo blanco detrás de la imagen para resaltar */
+    display: inline-block; /* Para que se ajuste a la imagen y no ocupe todo el ancho */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+}
+
+/* Animación de luciernagas para el contenedor */
+@keyframes volar {
+    0% {
+        top: 100%;
+        left: 50%;
+        opacity: 0.7;
+        transform: scale(1) translateX(-50%) translateY(0);
+    }
+    25% {
+        top: 20%;
+        left: 20%;
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    50% {
+        top: 10%;
+        left: 80%;
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    75% {
+        top: 80%;
+        left: 50%;
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        opacity: 0.7;
+        transform: scale(1) translateX(-50%) translateY(0);
+    }
 }
