@@ -22,6 +22,48 @@
     mask-size: cover;
 }
 
+/* Contenedor principal */
+#contador {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Cada elemento del contador (días, horas, etc) */
+.contador-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+/* Números grandes */
+.contador-numero {
+    font-family: 'Arial', sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--blanco);
+    text-shadow: 0 0 15px var(--blanco);
+}
+
+/* Etiquetas pequeñas */
+.contador-etiqueta {
+    font-family: 'Edwardian Script ITC', cursive;
+    font-size: 20px;
+    color: var(--blanco);
+    margin-top: -15px;
+}
+
+/* Mensaje del día del evento */
+#contador span {
+    font-family: 'Edwardian Script ITC', cursive;
+    font-size: 38px;
+    color: var(--blanco);
+    display: block;
+    text-align: center;
+}
+
 .fondo_main {
     position: relative;
     background-color: var(--Main); /* Fondo para visualizar mejor */

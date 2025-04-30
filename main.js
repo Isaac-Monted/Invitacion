@@ -2,6 +2,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     colocarHistoria1();
     generarLuciernagas(); // Función para generar luciérnagas
+
+    // Crear contenedor si no existe
+    if (!document.getElementById('contador')) {
+        const contadorDiv = document.createElement('div');
+        contadorDiv.id = 'contador';
+        document.getElementById('Contenedor_corazon').appendChild(contadorDiv);
+    }
+    
+    actualizarContador(); // Función para actualizar el contador
+    setInterval(actualizarContador, 1000);
 });
 
 function colocarHistoria1() {
@@ -59,4 +69,53 @@ function generarLuciernagas() {
 
         contenedor.appendChild(luciernaga);
     }
+}
+
+// Funcion para el contador
+function actualizarContador() {
+    const fechaBoda = new Date('2025-11-15T15:00:00'); // Fecha y hora de tu boda
+    const ahora = new Date();
+    
+    // Diferencia en milisegundos
+    let diferencia = fechaBoda - ahora;
+    
+    // Evitar números negativos (si ya pasó la fecha)
+    if (diferencia < 0) {
+        document.getElementById('contador').innerHTML = `
+            <span>¡Hoy es el gran día! 💍</span>
+        `;
+        return;
+    }
+    
+    // Cálculo de días, horas, minutos y segundos
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    diferencia -= dias * (1000 * 60 * 60 * 24);
+    
+    const horas = Math.floor(diferencia / (1000 * 60 * 60));
+    diferencia -= horas * (1000 * 60 * 60);
+    
+    const minutos = Math.floor(diferencia / (1000 * 60));
+    diferencia -= minutos * (1000 * 60);
+    
+    const segundos = Math.floor(diferencia / 1000);
+    
+    // Mostrar el resultado
+    document.getElementById('contador').innerHTML = `
+        <div class="contador-item">
+            <span class="contador-numero">${dias}</span>
+            <span class="contador-etiqueta">días</span>
+        </div>
+        <div class="contador-item">
+            <span class="contador-numero">${horas}</span>
+            <span class="contador-etiqueta">horas</span>
+        </div>
+        <div class="contador-item">
+            <span class="contador-numero">${minutos}</span>
+            <span class="contador-etiqueta">min</span>
+        </div>
+        <div class="contador-item">
+            <span class="contador-numero">${segundos}</span>
+            <span class="contador-etiqueta">seg</span>
+        </div>
+    `;
 }
