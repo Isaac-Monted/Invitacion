@@ -1,6 +1,7 @@
 // Escucha el evento de carga del DOM
 document.addEventListener("DOMContentLoaded", () => {
     colocarHistoria1();
+    colocarHistoria2();
     generarLuciernagas(); // Función para generar luciérnagas
 
     // Crear contenedor si no existe
@@ -24,7 +25,7 @@ function colocarHistoria1() {
 };
 
 function colocarHistoria2() {
-    const $Historia = `No paso mucho tiempo cuando un 28 de enero decidirian<br>`;
+    const $Historia = `No paso mucho tiempo cuando un 28 de enero decidirian por fin estar juntos<br> iwefouhwefewf`;
 
     const contenedor = document.getElementById("Historia2"); // Selecciona el contenedor
     const elementoP = document.createElement("p"); // Crea un elemento <p>
@@ -36,6 +37,7 @@ function colocarHistoria2() {
 function generarLuciernagas() {
     const contenedor = document.getElementById("contenedor-luciernagas");
     const numeroDeLuciernagas = 25;
+    const contador = document.getElementById('contador');
 
     for (let i = 0; i < numeroDeLuciernagas; i++) {
         const luciernaga = document.createElement('div');
@@ -73,17 +75,34 @@ function generarLuciernagas() {
 
 // Funcion para el contador
 function actualizarContador() {
-    const fechaBoda = new Date('2025-11-15T15:00:00'); // Fecha y hora de tu boda
+    const fechaBoda = new Date('2025-11-08T15:00:00'); // Fecha y hora de tu boda
     const ahora = new Date();
     
     // Diferencia en milisegundos
     let diferencia = fechaBoda - ahora;
+    const unDiaEnMs = 1000 * 60 * 60 * 24;
     
     // Evitar números negativos (si ya pasó la fecha)
     if (diferencia < 0) {
-        document.getElementById('contador').innerHTML = `
-            <span>¡Hoy es el gran día! 💍</span>
-        `;
+         // Si ya pasó más de un día
+        if (Math.abs(diferencia) >= unDiaEnMs) {
+            contador.innerHTML = `
+                <span class="mensaje-agradecimiento">
+                    ¡Gracias por haber sido parte de nuestro día especial! 💖<br>
+                    <small>15 de Noviembre 2025</small>
+                </span>
+            `;
+        }
+        // Si es el día de la boda
+        else {
+            contador.innerHTML = `
+                <span class="mensaje-boda">
+                    ¡Hoy es el gran día! 💍<br>
+                    <small>¡Estamos celebrando nuestro amor!</small>
+                </span>
+                
+            `;
+        }
         return;
     }
     

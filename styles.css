@@ -58,10 +58,49 @@
 /* Mensaje del día del evento */
 #contador span {
     font-family: 'Edwardian Script ITC', cursive;
-    font-size: 38px;
+    font-size: 50px;
     color: var(--blanco);
+    text-shadow: 0 0 20px var(--blanco);
     display: block;
     text-align: center;
+}
+
+.mensaje-agradecimiento {
+    font-family: 'Edwardian Script ITC', cursive;
+    font-size: 2.5rem;
+    color: var(--blanco);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.mensaje-agradecimiento small {
+    font-family: 'vivaldi';
+    font-size: 2rem;
+    color: var(--blanco);
+    display: block;
+    margin-top: 10px;
+}
+
+.mensaje-boda {
+    font-family: 'Edwardian Script ITC', cursive;
+    font-size: 2.5rem;
+    color: var(--blanco);
+    text-align: center;
+    line-height: 1.6;
+    animation: brillo 1.5s infinite alternate;
+}
+
+.mensaje-boda small {
+    font-family: 'vivaldi';
+    font-size: 2rem;
+    color: var(--blanco);
+    display: block;
+    margin-top: 10px;
+}
+
+@keyframes brillo {
+    from { opacity: 0.9; }
+    to { opacity: 1; text-shadow: 0 0 20px var(--blanco); }
 }
 
 .fondo_main {
@@ -129,15 +168,19 @@
 }
 
 .rotacion_izquierda {
-    position: absolute;
+    position: relative;
+    float: left;
     transform: rotate(-25deg);
-    left: 6vw;
+    left: 2vw;
+    margin-right: 9vw;
 }
 
 .rotacion_derecha{
-    position: absolute;
+    position: relative;
+    float: right;
     transform: rotate(25deg);
-    right: 6vw;
+    right: 2vw;
+    margin-left: 9vw;
 }
 
 .foto {
@@ -148,6 +191,7 @@
     background-color: var(--Dorado); /* Fondo blanco detrás de la imagen para resaltar */
     display: inline-block; /* Para que se ajuste a la imagen y no ocupe todo el ancho */
     border-radius: 4px; /* Bordes ligeramente redondeados */
+    shape-outside: circle(50%);
 }
 
 /* Animación de luciernagas para el contenedor */
