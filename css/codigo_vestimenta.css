@@ -1,3 +1,5 @@
+@import url('../var_colores.css');
+
 /* Sección de Código de Vestimenta */
 .dress-code-section {
     padding: 80px 20px; /* Más padding para asegurar que los novios tengan espacio para "subir" */
@@ -57,7 +59,7 @@
 .gender-label {
     font-size: 1.6em;
     font-weight: 600;
-    color: #6a0572; /* Color morado */
+    color: var(--Morado); /* Color morado */
     margin-bottom: 10px;
 }
 

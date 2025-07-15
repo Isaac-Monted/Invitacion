@@ -78,7 +78,7 @@
 .godparent-role {
     font-size: 1.1em;
     font-weight: 600;
-    color: #6a0572; /* Color morado para el rol */
+    color: var(--Morado); /* Color morado para el rol */
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }

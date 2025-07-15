@@ -1,13 +1,14 @@
 
 :root{
     --Negro: rgba(0, 0, 0, 1);
-    --Main: #009c8c;
-    --deep_main: #006d62;
+    --Main: rgb(0, 156, 140);
+    --deep_main: rgb(0, 109, 98);
     --Dorado: rgb(202, 174, 14);
     --rojo: rgb(202, 14, 14);
     --blanco: rgb(227, 239, 243);
     --fondo_pagina: rgb(202, 202, 202);
     --deep_fondo_pagina: rgb(122, 122, 122);
+    --Morado: rgb(106, 5, 114);
 }
 
 @font-face {

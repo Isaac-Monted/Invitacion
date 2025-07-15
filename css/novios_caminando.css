@@ -1,7 +1,7 @@
 /* Sección que contendrá a los novios caminando */
 .walking-couple-section {
     position: relative; /* Importante para el posicionamiento de sus hijos si se necesita */
-    height: 100vh; /* Puedes ajustar esto según qué tan alto quieres que sea el espacio para el efecto */
+    height: 10vh; /* Puedes ajustar esto según qué tan alto quieres que sea el espacio para el efecto */
     /* Asegúrate de que esta sección tenga suficiente contenido debajo de ella
        para que haya scroll y el efecto se pueda apreciar. */
 }

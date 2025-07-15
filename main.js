@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Llama a la funcion de animacion del carrucel
     initGodparentsCarousel();
+
+    // Llamar a la funcion de animacion de galeria
+    initGalleryAnimations();
 });
 
 function colocarHistoria1() {
@@ -80,6 +83,53 @@ function generarLuciernagas() {
 
         contenedor.appendChild(luciernaga);
     }
+}
+
+// Función para las animaciones de la galería al hacer scroll
+function initGalleryAnimations() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (galleryItems.length === 0) {
+        console.warn("No se encontraron elementos de galería para animar.");
+        return;
+    }
+
+    // Aplica las clases iniciales (from-left o from-right) antes de que se vean
+    galleryItems.forEach((item, index) => {
+        if (index % 2 === 0) { // Elementos pares (0, 2, 4...) desde la izquierda
+            item.classList.add('from-left');
+        } else { // Elementos impares (1, 3, 5...) desde la derecha
+            item.classList.add('from-right');
+        }
+    });
+
+    // Opciones para el Intersection Observer
+    const observerOptions = {
+        root: null, // Observa el viewport como raíz
+        rootMargin: '0px', // Sin margen adicional
+        threshold: 0.1 // Cuando el 10% del elemento es visible, activa la animación
+    };
+
+    // Callback que se ejecuta cuando los elementos cruzan el umbral de visibilidad
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Si el elemento es visible, activa la animación final
+                entry.target.classList.add('fade-in');
+                // Removemos las clases de inicio para que solo quede 'fade-in'
+                entry.target.classList.remove('from-left', 'from-right');
+                observer.unobserve(entry.target); // Deja de observar este elemento una vez que se ha animado
+            }
+        });
+    };
+
+    // Crea el Intersection Observer
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observa cada elemento de la galería
+    galleryItems.forEach(item => {
+        observer.observe(item);
+    });
 }
 
 // Funcion para el contador

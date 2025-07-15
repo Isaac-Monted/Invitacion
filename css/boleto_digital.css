@@ -98,7 +98,7 @@
 .waiting-message {
     font-size: 1.5em;
     font-weight: 700;
-    color: #6a0572; /* #e74c3c */
+    color: var(--Morado); /* #e74c3c */
     margin-top: 10px;
     animation: pulse 1.5s infinite;
 }

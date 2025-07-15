@@ -1,0 +1,111 @@
+/* Sección de Galería de Fotos */
+.gallery-section {
+    padding: 80px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+    overflow: hidden; /* Esto es crucial para que las imágenes salgan de la vista */
+}
+
+.gallery-header {
+    margin-bottom: 50px;
+}
+
+.gallery-title {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery-description {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    /* --- ESTO ES CRUCIAL: La transición DEBE estar aquí --- */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* --- ESTADOS INICIALES (ocultas y fuera de posición) --- */
+/* Estas clases deben ser aplicadas por JavaScript AL PRINCIPIO */
+.gallery-item.from-left {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.95);
+}
+
+.gallery-item.from-right {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+}
+
+/* --- ESTADO FINAL (visible y en posición) --- */
+/* Esta clase se añade por JavaScript cuando el elemento es visible */
+.gallery-item.fade-in {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-in-out; /* Animación al hacer hover */
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.03);
+}
+
+/* Media Queries (Mantener las que ya tienes) */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 2.2em;
+    }
+    .gallery-description {
+        font-size: 1.1em;
+    }
+    .gallery-grid {
+        max-width: 600px;
+        gap: 30px;
+    }
+    .gallery-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        padding: 50px 15px;
+    }
+    .gallery-title {
+        font-size: 2em;
+    }
+    .gallery-grid {
+        max-width: 95%;
+        gap: 20px;
+    }
+    .gallery-image {
+        height: 250px;
+    }
+}
