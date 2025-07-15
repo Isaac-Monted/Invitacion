@@ -79,7 +79,7 @@
 }
 
 /* Media Queries (Mantener las que ya tienes) */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .gallery-title {
         font-size: 2.2em;
     }
@@ -95,12 +95,12 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
     .gallery-section {
         padding: 50px 15px;
     }
     .gallery-title {
-        font-size: 2em;
+        font-size: 1.4em;
     }
     .gallery-grid {
         max-width: 95%;

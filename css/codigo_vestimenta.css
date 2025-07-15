@@ -78,7 +78,7 @@
 }
 
 /* Media Queries para responsividad */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .dress-code-title {
         font-size: 1.5em;
     }
@@ -106,11 +106,23 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
     .dress-code-section {
         padding: 50px 15px;
     }
     .dress-code-title {
-        font-size: 1.4em;
+        font-size: 1em;
+    }
+
+    .dress-code-subtitle {
+        font-size: 0.8em;
+    }
+
+    .gender-label {
+        font-size: 1em;
+    }
+
+    .dress-suggestion {
+        font-size: 0.8em;
     }
 }

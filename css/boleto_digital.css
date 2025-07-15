@@ -6,7 +6,7 @@
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    max-width: 600px;
+    max-width: 70%;
     text-align: center;
     margin: 20px auto; /* Usar margin: auto para centrar horizontalmente si el contenedor padre lo permite */
     box-sizing: border-box;
@@ -127,7 +127,7 @@
     }
 
     .invitation-heading {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .couple-title {
@@ -147,4 +147,38 @@
     .waiting-message {
         font-size: 1.3em;
     }
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 400px) {
+    .invitation-card {
+        padding: 10px;
+        margin: 7px auto;
+    }
+
+    .invitation-heading {
+        font-size: 1em;
+    }
+
+    .couple-title {
+        font-size: 1.6em;
+    }
+
+    /* En pantallas pequeñas, apila los detalles de la pareja */
+    .couple-details-wrapper {
+        flex-direction: column; /* Cambia a columna para que se apilen */
+        align-items: center; /* Centra los elementos al apilarse */
+    }
+
+    .name {
+        font-size: 0.8em;
+    }
+
+    .waiting-message {
+        font-size: 1em;
+    }
+
+    .call-to-action {
+    font-size: 1em;
+}
 }
