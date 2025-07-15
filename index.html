@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="elementals.css"> <!-- Vinculamos el archivo CSS -->
     <link rel="stylesheet" href="figuras.css"> <!-- Vinculamos el archivo CSS -->
     <link rel="stylesheet" href="./css/boleto_digital.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="./css/novios_caminando.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="./css/detalles_eventos.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="./css/carrucel_padrinos.css"> <!-- Vinculamos el archivo CSS -->
 </head>
 <body>
     <header>
@@ -64,108 +67,116 @@
             </div>
         </section>
         <!-- Novios caminando -->
-        <section>
-            <div>
-                <div>
-                    <img src="./assets/novio_w.png" alt="Novio Caminando" id="Novio_caminando">
+        <section class="walking-couple-section">
+            <div class="walking-couple-container">
+                <div class="walking-partner-wrapper left-side">
+                    <img src="./assets/novio_w.png" alt="Novio Caminando" id="groomWalking" class="walking-image">
                 </div>
-                <div>
-                    <img src="./assets/novia_w.png" alt="Novia Caminando" id="Novia_caminando">
+                <div class="walking-partner-wrapper right-side">
+                    <img src="./assets/novia_w.png" alt="Novia Caminando" id="brideWalking" class="walking-image">
                 </div>
             </div>
         </section>
         <!-- Direcciones de evento -->
-        <section>
-            <div> <!-- ceremonia -->
-                <div>
-                    <p>Ceremonia</p>
-                    <img src="./assets/fotos/Parroquia.webp" alt="Parroquia de Santiago Apostol de Chalco">
-                    <p>Parroquia de Santiago Apostol de Chalco</p>
-                    <div> <!-- detalles evento -->
-                        <div>
-                            <p>Hora:</p>
-                            <p>17:00 P.M.</p>
+        <section class="event-locations-section">
+            <h2 class="section-title">¡Te esperamos en nuestros eventos!</h2>
+            <div class="events-container">
+                <div class="event-card ceremony-card"> <!-- ceremonia -->
+                    <p class="event-type-title">Ceremonia</p>
+                    <div class="event-image-wrapper">
+                        <img src="./assets/fotos/Parroquia.webp" alt="Parroquia de Santiago Apostol de Chalco" class="event-image">
+                    </div>
+                    <p class="event-place-name">Parroquia de Santiago Apostol de Chalco</p>
+                    <div class="event-details-grid"> <!-- detalles evento -->
+                        <div class="detail-item">
+                            <p class="detail-label">Hora:</p>
+                            <p class="detail-value">17:00 P.M.</p>
                         </div>
-                        <div>
-                            <p>Direccion:</p>
-                            <p>C. Riva Palacio Manzana 016, Chalco Centro, 56600 Chalco de Díaz Covarrubias, Méx.</p>
+                        <div class="detail-item">
+                            <p class="detail-label">Direccion:</p>
+                            <p class="detail-value">C. Riva Palacio Manzana 016, Chalco Centro, 56600 Chalco de Díaz Covarrubias, Méx.</p>
                         </div>
                     </div>
-                    <a href="https://maps.app.goo.gl/okcU24DoQnBascGw6">¿Como llegar? 📍</a>
+                    <a href="https://maps.app.goo.gl/okcU24DoQnBascGw6" target="_blank" class="map-link">¿Como llegar? 📍</a>
                 </div>
-            </div>
-            <div> <!-- celebracion -->
-                <p>Celebracion</p>
-                    <img src="./assets/fotos/celebracion.jpeg" alt="Rubén Darío 52-58">
-                    <p>Rubén Darío 52-58</p>
-                    <div> <!-- detalles evento -->
-                        <div>
-                            <p>Hora:</p>
-                            <p>18:30 P.M.</p>
-                        </div>
-                        <div>
-                            <p>Direccion:</p>
-                            <p>Rubén Darío 52-58, Casco de San Juan, 56600 Chalco de Díaz Covarrubias, Méx.</p>
-                        </div>
+                <div class="event-card celebration-card"> <!-- celebracion -->
+                    <p class="event-type-title">Celebracion</p>
+                    <div class="event-image-wrapper">
+                        <img src="./assets/fotos/celebracion.jpeg" alt="Rubén Darío 52-58" class="event-image">
                     </div>
-                    <a href="https://maps.app.goo.gl/ihjfF2AUmJUEcXhz5">¿Como llegar? 📍</a>
+                        <p class="event-place-name">Rubén Darío 52-58</p>
+                        <div class="event-details-grid"> <!-- detalles evento -->
+                            <div class="detail-item">
+                                <p class="detail-label">Hora:</p>
+                                <p class="detail-value">18:30 P.M.</p>
+                            </div>
+                            <div class="detail-item">
+                                <p class="detail-label">Direccion:</p>
+                                <p class="detail-value">Rubén Darío 52-58, Casco de San Juan, 56600 Chalco de Díaz Covarrubias, Méx.</p>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/ihjfF2AUmJUEcXhz5" target="_blank" class="map-link">¿Como llegar? 📍</a>
+                </div>
             </div>
         </section>
         <!-- Seccion de padrinos -->
-        <section>
-            <div>
-                <div>
-                    <h4>Nuestos padrinos</h4>
-                    <p>Gracias por acompañarnos en este dia</p>
+        <section class="godparents-section">
+            <div class="godparents-content-wrapper">
+                <div class="godparents-intro">
+                    <h4 class="section-subtitle">Nuestos padrinos</h4>
+                    <p class="section-description">Gracias por acompañarnos en este dia</p>
                 </div>
-                <div> <!-- carrucel de padrinos -->
-                    <ul>
-                        <li>
-                            <p>Anillos</p>
-                            <p></p>
+                <div class="godparents-carousel-container"> <!-- carrucel de padrinos -->
+                    <ul class="godparents-list" id="godparentsCarousel">
+                        <li class="godparent-item">
+                            <p class="godparent-role">Anillos</p>
+                            <p class="godparent-name">nombre padrino anillos</p>
                         </li>
-                        <li>
-                            <p>Lazo</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Lazo</p>
+                            <p class="godparent-name">nombre padrino lazo</p>
                         </li>
-                        <li>
-                            <p>Arras</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Arras</p>
+                            <p class="godparent-name">nombre padrino arras</p>
                         </li>
-                        <li>
-                            <p>Medallas</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Medallas</p>
+                            <p class="godparent-name">nombre padrino medallas</p>
                         </li>
-                        <li>
-                            <p>Biblia</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Biblia</p>
+                            <p class="godparent-name">nombre padrino biblia</p>
                         </li>
-                        <li>
-                            <p>Cojines</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Cojines</p>
+                            <p class="godparent-name">nombre padrino cojines</p>
                         </li>
-                        <li>
-                            <p>Ramo</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Ramo</p>
+                            <p class="godparent-name">nombre padrino ramo</p>
                         </li>
-                        <li>
-                            <p>Brindis</p>
-                            <p></p>
+                        <li class="godparent-item">
+                            <p class="godparent-role">Brindis</p>
+                            <p class="godparent-name">nombre padrino brindis</p>
                         </li>
                     </ul>
+                    <button class="carousel-button prev-button">&#10094;</button>
+                    <button class="carousel-button next-button">&#10095;</button>
                 </div>
-                <div>
-                    <div>
-                        <p>Mención especial</p>
-                        <p>Velacion</p>
+                <div class="carousel-pagination" id="godparentsPagination"></div>
+                <div class="special-mention-card">
+                    <div class="special-mention-text">
+                        <p class="mention-type">Mención especial</p>
+                        <p class="mention-role">Velacion</p>
                     </div>
-                    <img src="./assets/velacion.png" alt="Velacion">
-                    <p></p>
+                    <img src="./assets/velacion.png" alt="Velacion" class="mention-image">
+                    <p class="mention-name">nombre padrino velacion</p>
                 </div>
             </div>
         </section>
         <!-- Codigo vestimenta -->
-        <section>          <!-- <= Aqui Termina la caminata de los novios -->
+        <section id="yourTargetSectionId"> <!-- <= Aqui Termina la caminata de los novios -->
             <div>
                 <div>
                     <p>Hombres</p>

@@ -1,4 +1,4 @@
-@import url('var_colores.css');
+@import url('../var_colores.css');
 
 /* Estilos para la tarjeta principal */
 .invitation-card {
@@ -98,7 +98,7 @@
 .waiting-message {
     font-size: 1.5em;
     font-weight: 700;
-    color: #e74c3c;
+    color: #6a0572; /* #e74c3c */
     margin-top: 10px;
     animation: pulse 1.5s infinite;
 }

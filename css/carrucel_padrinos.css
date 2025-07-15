@@ -1,0 +1,253 @@
+/* Sección de Padrinos */
+.godparents-section {
+    padding: 60px 20px;
+    background-color: #f4f2ee; /* Un color de fondo diferente para destacar */
+    text-align: center;
+    overflow: hidden; /* Importante para el carrusel, oculta el desbordamiento */
+}
+
+.godparents-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Espacio entre los bloques principales */
+}
+
+.godparents-intro {
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Carrusel de Padrinos */
+.godparents-carousel-container {
+    width: 100%; /* El contenedor ocupa todo el ancho */
+    overflow: hidden; /* Oculta lo que se desborde del carrusel */
+    padding: 20px 0; /* Espacio vertical para las tarjetas del carrusel */
+    position: relative; /* Importante para posicionar botones dentro */
+}
+
+.godparents-list {
+    display: flex; /* Para que los ítems estén en fila */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento de JS */
+}
+
+/* Ocultar la animación CSS, ahora JS la controlará */
+.godparents-list.no-transition {
+    transition: none; /* Clase para desactivar la transición cuando JS "resetea" la posición */
+}
+
+.godparent-item {
+    flex-shrink: 0; /* Evita que los ítems se encojan */
+    width: 280px; /* Ancho fijo para cada tarjeta de padrino */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin: 0 15px; /* Espacio entre las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 120px; /* Altura mínima para que las tarjetas se vean uniformes */
+}
+
+.godparent-item:hover {
+    transform: translateY(-5px);
+}
+
+.godparent-role {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #6a0572; /* Color morado para el rol */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.godparent-name {
+    font-size: 1em;
+    color: #444;
+    text-align: center;
+}
+
+/* Botones de navegación */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(106, 5, 114, 0.7); /* Morado semitransparente */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50%; /* Botones circulares */
+    z-index: 10; /* Asegura que estén por encima de las tarjetas */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 50px; /* Ancho y alto para que sean un círculo perfecto */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-button:hover {
+    background-color: rgba(106, 5, 114, 0.9);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Puntos de paginación */
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 8px;
+}
+
+.pagination-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb; /* Color gris para los puntos inactivos */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-dot.active {
+    background-color: #6a0572; /* Morado para el punto activo */
+    transform: scale(1.2);
+}
+
+/* Mención Especial */
+.special-mention-card {
+    background-color: #fff8dc; /* Un color de fondo más suave para destacar */
+    border: 2px solid #ffd700; /* Borde dorado para realzar */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 350px; /* Ancho de la tarjeta de mención especial */
+    width: 100%; /* Para que sea responsive */
+    margin-top: 20px; /* Espacio superior para separarla del carrusel */
+}
+
+.special-mention-text {
+    text-align: center;
+}
+
+.mention-type {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.mention-role {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #6a0572;
+}
+
+.mention-image {
+    width: 120px; /* Tamaño de la imagen de mención especial */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd700;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mention-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .section-subtitle {
+        font-size: 2em;
+    }
+
+    .godparent-item {
+        width: 220px; /* Reducir ancho de tarjeta de padrino en pantallas medianas */
+        margin: 0 10px;
+    }
+
+    .godparents-list {
+        animation-duration: 25s; /* Ajustar velocidad del carrusel si hay menos espacio */
+    }
+
+    .special-mention-card {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-subtitle {
+        font-size: 1.8em;
+    }
+
+    .section-description {
+        font-size: 1em;
+    }
+
+    .godparent-item {
+        width: 200px; /* Reducir aún más en móviles pequeños */
+        margin: 0 8px;
+    }
+
+    .godparents-list {
+        animation-duration: 20s; /* Hacerlo un poco más rápido para adaptarse */
+    }
+
+    .special-mention-card {
+        padding: 20px;
+    }
+
+    .mention-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .carousel-button {
+        display: none; /* Opcional: Ocultar botones en pantallas muy pequeñas si prefieres solo el swipe/puntos */
+    }
+}
