@@ -1,7 +1,8 @@
 /* Sección de Galería de Fotos */
 .gallery-section {
     padding: 80px 20px;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background-image: url('../assets/fondo-de-madera.jpg');
     text-align: center;
     overflow: hidden; /* Esto es crucial para que las imágenes salgan de la vista */
 }
@@ -12,7 +13,7 @@
 
 .gallery-title {
     font-size: 2.8em;
-    color: #333;
+    color: var(--Dorado); /*#333*/
     margin-bottom: 15px;
     font-weight: 700;
     text-transform: uppercase;
@@ -21,7 +22,7 @@
 
 .gallery-description {
     font-size: 1.2em;
-    color: #666;
+    color: var(--Main); /*#666*/
     max-width: 700px;
     margin: 0 auto;
 }
