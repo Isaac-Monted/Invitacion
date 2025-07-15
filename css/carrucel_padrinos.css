@@ -1,7 +1,9 @@
+@import url('../var_colores.css');
+
 /* Sección de Padrinos */
 .godparents-section {
     padding: 60px 20px;
-    background-color: #f4f2ee; /* Un color de fondo diferente para destacar */
+    background-color: var(--fondo_pagina); /* #f4f2ee; Un color de fondo diferente para destacar */
     text-align: center;
     overflow: hidden; /* Importante para el carrusel, oculta el desbordamiento */
 }
@@ -92,7 +94,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(106, 5, 114, 0.7); /* Morado semitransparente */
+    background-color: rgba(0, 109, 98, 0.7);/* rgba(106, 5, 114, 0.7);  Morado semitransparente */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -139,7 +141,7 @@
 }
 
 .pagination-dot.active {
-    background-color: #6a0572; /* Morado para el punto activo */
+    background-color: var(--deep_main); /* Morado para el punto activo */
     transform: scale(1.2);
 }
 

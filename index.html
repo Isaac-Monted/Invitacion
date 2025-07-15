@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/novios_caminando.css"> <!-- Vinculamos el archivo CSS -->
     <link rel="stylesheet" href="./css/detalles_eventos.css"> <!-- Vinculamos el archivo CSS -->
     <link rel="stylesheet" href="./css/carrucel_padrinos.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="./css/codigo_vestimenta.css"> <!-- Vinculamos el archivo CSS -->
 </head>
 <body>
     <header>
@@ -176,17 +177,19 @@
             </div>
         </section>
         <!-- Codigo vestimenta -->
-        <section id="yourTargetSectionId"> <!-- <= Aqui Termina la caminata de los novios -->
-            <div>
-                <div>
-                    <p>Hombres</p>
-                    <img src="./assets/traje.png" alt="traje">
-                    <p></p>
+        <section class="dress-code-section" id="yourTargetSectionId"> <!-- <= Aqui Termina la caminata de los novios -->
+            <p class="dress-code-title">Código de Vestimenta</p>
+            <p class="dress-code-subtitle">Te sugerimos el siguiente código para acompañarnos:</p>
+            <div class="dress-code-container">
+                <div class="dress-code-item">
+                    <p class="gender-label">Hombres</p>
+                    <img src="./assets/traje.png" alt="Traje" class="dress-code-image">
+                    <p class="dress-suggestion">Formal / Traje</p>
                 </div>
-                <div>
-                    <p>Mujeres</p>
-                    <img src="./assets/vestido.png" alt="vestido">
-                    <p></p>
+                <div class="dress-code-item">
+                    <p class="gender-label">Mujeres</p>
+                    <img src="./assets/vestido.png" alt="Vestido" class="dress-code-image">
+                    <p class="dress-suggestion">Formal / Vestido de Noche</p>
                 </div>
             </div>
         </section>

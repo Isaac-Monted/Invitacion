@@ -332,73 +332,83 @@ function initWalkingCoupleAnimation() {
     const groom = document.getElementById('groomWalking');
     const bride = document.getElementById('brideWalking');
     const walkingCoupleContainer = document.querySelector('.walking-couple-container');
-    const triggerSection = document.getElementById('yourTargetSectionId'); // ¡Asegúrate de que este ID exista en tu HTML!
+    const triggerSection = document.getElementById('yourTargetSectionId'); // ¡Ahora es la sección de Código de Vestimenta!
 
     if (!groom || !bride || !walkingCoupleContainer || !triggerSection) {
-        console.warn("Elementos de animación de novios no encontrados. Asegúrate de que los IDs/clases sean correctos y la sección de encuentro exista.");
-        return; // Salir si los elementos no están presentes
+        console.warn("Elementos de animación de novios no encontrados. Asegúrate de que los IDs y clases sean correctos y la sección de encuentro exista.");
+        return;
     }
 
-    const initialOffset = 50; 
-    let sectionReached = false;
+    const initialOffset = 50; // Distancia inicial desde los bordes de la ventana (en px)
 
     function animateCouple() {
         const scrollY = window.scrollY || window.pageYOffset;
 
         const triggerSectionRect = triggerSection.getBoundingClientRect();
+        // triggerSectionTop es la distancia desde el TOP del documento hasta el inicio de la sección
         const triggerSectionTop = triggerSectionRect.top + window.scrollY;
         const triggerSectionHeight = triggerSection.offsetHeight;
 
-        const startMeetingPoint = triggerSectionTop - window.innerHeight * 0.8; 
-        const endMeetingPoint = triggerSectionTop + triggerSectionHeight / 2;
+        // Definimos el punto de inicio y fin de la "caminata" y "encuentro"
+        // Empiezan a moverse cuando la sección de vestimenta está a 80% de la altura de la ventana desde abajo
+        const startMeetingPointScroll = triggerSectionTop - window.innerHeight * 0.8;
+        // Se encuentran completamente cuando la parte inferior de la sección de vestimenta entra en la vista
+        const endMeetingPointScroll = triggerSectionTop + triggerSectionHeight - window.innerHeight * 0.2;
+        // Opcional: un punto donde dejan de ser fijos y se "enganchan" a la sección
+        const detachPointScroll = triggerSectionTop + triggerSectionHeight - (walkingCoupleContainer.offsetHeight / 2);
 
-        if (scrollY < startMeetingPoint) {
+
+        // --- Lógica de la animación ---
+
+        // 1. Antes del inicio de la caminata: Fijos y separados
+        if (scrollY < startMeetingPointScroll) {
             groom.style.transform = `translateX(${initialOffset}px)`;
             bride.style.transform = `translateX(-${initialOffset}px)`;
-            walkingCoupleContainer.style.transform = 'translateY(0)';
             walkingCoupleContainer.style.position = 'fixed';
             walkingCoupleContainer.style.bottom = '0';
-            sectionReached = false;
-        } else if (scrollY >= startMeetingPoint && scrollY < endMeetingPoint) {
-            const scrollProgress = (scrollY - startMeetingPoint) / (endMeetingPoint - startMeetingPoint);
-            const moveDistance = 200; 
-            const currentMove = moveDistance * scrollProgress;
+            walkingCoupleContainer.style.top = 'auto'; // Asegurarse de que top no esté configurado
+            walkingCoupleContainer.style.transform = 'translateY(0)'; // No hay movimiento vertical
+        }
+        // 2. Durante la caminata y encuentro: Fijos y acercándose
+        else if (scrollY >= startMeetingPointScroll && scrollY < detachPointScroll) {
+            // Calcula el progreso de acercamiento
+            const approachProgress = Math.min(1, (scrollY - startMeetingPointScroll) / (endMeetingPointScroll - startMeetingPointScroll));
+            const moveDistance = (window.innerWidth / 2) - groom.offsetWidth - initialOffset - 20; // Ajusta 20px para el espacio entre ellos
+            // Calcular cuánto se mueven desde initialOffset hacia el centro
+            const currentMove = moveDistance * approachProgress;
 
             groom.style.transform = `translateX(${initialOffset + currentMove}px)`;
             bride.style.transform = `translateX(-${initialOffset + currentMove}px)`;
 
-            walkingCoupleContainer.style.transform = 'translateY(0)';
             walkingCoupleContainer.style.position = 'fixed';
             walkingCoupleContainer.style.bottom = '0';
-            sectionReached = false;
-        } else if (scrollY >= endMeetingPoint) {
-            const finalMoveDistance = 200;
+            walkingCoupleContainer.style.top = 'auto';
+            walkingCoupleContainer.style.transform = 'translateY(0)'; // Todavía no suben
+        }
+        // 3. Después del encuentro y subida con la página: Posición absoluta
+        else {
+            // Se aseguran de que estén en la posición final de encuentro
+            const finalMoveDistance = (window.innerWidth / 2) - groom.offsetWidth - initialOffset - 20; // La misma distancia final
             groom.style.transform = `translateX(${initialOffset + finalMoveDistance}px)`;
             bride.style.transform = `translateX(-${initialOffset + finalMoveDistance}px)`;
 
-            const scrollOffsetForLift = scrollY - endMeetingPoint;
-            const liftHeight = triggerSectionHeight;
-            const liftProgress = Math.min(scrollOffsetForLift / liftHeight, 1);
-            const currentLift = liftProgress * liftHeight;
+            // Calcular la posición vertical para que se "peguen" a la sección
+            // Quieres que la *parte inferior* del contenedor de los novios se alinee
+            // con la parte superior de la sección de destino.
+            const newTopPosition = triggerSectionTop - walkingCoupleContainer.offsetHeight;
 
-            if (scrollY > (triggerSectionTop + triggerSectionHeight)) {
-                if (!sectionReached) {
-                    walkingCoupleContainer.style.position = 'absolute';
-                    walkingCoupleContainer.style.bottom = 'auto';
-                    walkingCoupleContainer.style.top = `${triggerSectionTop + triggerSectionHeight - walkingCoupleContainer.offsetHeight}px`;
-                    walkingCoupleContainer.style.transform = 'translateY(0)';
-                    sectionReached = true;
-                }
-            } else {
-                walkingCoupleContainer.style.transform = `translateY(-${currentLift}px)`;
-                walkingCoupleContainer.style.position = 'fixed';
-                walkingCoupleContainer.style.bottom = '0';
-                sectionReached = false;
-            }
+            walkingCoupleContainer.style.position = 'absolute';
+            walkingCoupleContainer.style.bottom = 'auto'; // Quitar el bottom para que 'top' funcione
+            walkingCoupleContainer.style.top = `${newTopPosition}px`;
+            walkingCoupleContainer.style.transform = 'translateY(0)'; // Resetear cualquier transformación de traslación
         }
     }
 
-    // Inicializa la animación y adjunta el evento de scroll
-    animateCouple();
+    // Ejecuta la función al cargar y en cada scroll
     window.addEventListener('scroll', animateCouple);
+    // Ejecuta una vez para posicionar las imágenes correctamente al cargar la página
+    animateCouple();
+
+    // Re-ejecuta en redimensionamiento para ajustar las posiciones
+    window.addEventListener('resize', animateCouple);
 }
