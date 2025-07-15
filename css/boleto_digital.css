@@ -1,0 +1,150 @@
+@import url('var_colores.css');
+
+/* Estilos para la tarjeta principal */
+.invitation-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto; /* Usar margin: auto para centrar horizontalmente si el contenedor padre lo permite */
+    box-sizing: border-box;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Título de la invitación */
+.invitation-heading {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Sección de información de los novios */
+.couple-info {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.couple-title {
+    font-family: 'Edwardian Script ITC', cursive;
+    font-size: 2.6em;
+    font-weight: 600;
+    color: var(--deep_main);
+    margin-bottom: 10px;
+}
+
+/* Contenedor para los detalles de la pareja */
+.couple-details-wrapper {
+    display: flex; /* Convierte este contenedor en un flex container */
+    justify-content: space-around; /* Distribuye los elementos con espacio entre ellos */
+    align-items: flex-start; /* Alinea los elementos al inicio del eje cruzado (arriba) */
+    gap: 20px; /* Espacio entre los detalles de la novia y el novio */
+    flex-wrap: wrap; /* Permite que los elementos salten a la siguiente línea si no hay espacio */
+}
+
+.partner-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1; /* Permite que cada partner-details ocupe el espacio disponible */
+    min-width: 150px; /* Ancho mínimo para cada columna antes de que se envuelvan */
+}
+
+.role {
+    font-size: 1em;
+    font-weight: 500;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.partner-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Mensajes finales */
+.call-to-action {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #555;
+    margin-top: 15px;
+}
+
+.waiting-message {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 600px) {
+    .invitation-card {
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .invitation-heading {
+        font-size: 1.4em;
+    }
+
+    .couple-title {
+        font-size: 2em;
+    }
+
+    /* En pantallas pequeñas, apila los detalles de la pareja */
+    .couple-details-wrapper {
+        flex-direction: column; /* Cambia a columna para que se apilen */
+        align-items: center; /* Centra los elementos al apilarse */
+    }
+
+    .name {
+        font-size: 1em;
+    }
+
+    .waiting-message {
+        font-size: 1.3em;
+    }
+}

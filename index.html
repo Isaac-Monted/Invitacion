@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css"> <!-- Vinculamos el archivo CSS -->
     <link rel="stylesheet" href="elementals.css"> <!-- Vinculamos el archivo CSS -->
     <link rel="stylesheet" href="figuras.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="./css/boleto_digital.css"> <!-- Vinculamos el archivo CSS -->
 </head>
 <body>
     <header>
@@ -26,8 +27,8 @@
         </section>
         <!-- Historia novios -->
         <section>
-            <h2 class="text_align_center">Acompañanos en nuestra celebración</h2>
-            <h3>Despues de tantas aventuras juntos decidimos estar juntos</h3>
+            <h2 class="text_align_center">El comienzo de un nuevo capitulo en esta historia de amor</h2>
+            <h3>Estas invitado a vivir con nosotros este momento inolvidable</h3>
             <div id="Historia"></div>
             <div>
                 <img class="foto rotacion_izquierda" src='./assets/fotos/dinos3.jpg', alt="Dinos No.3">
@@ -39,13 +40,27 @@
             <div style="margin: 10%"></div>
         </section>
         <!-- Boleto Digital -->
-        <section>
-            <div>
-                <p>Estas Invitado</p>
-                <img src="./assets/novio.png" alt="Novio stiker">
-                <img src="./assets/novia.png" alt="Novia stiker">
-                <p>Acopañanos en nuestra celebracion</p>
-                <p>¡Te Esperamos!</p>
+        <section  class="invitation-card">
+            <div class="card-content">
+                <p class="invitation-heading">Has recibido una invitacion digital</p>
+                <div class="couple-info">
+                    <p class="couple-title">¡Conoce a los enamorados!</p>
+                    <div class="couple-details-wrapper">
+                        <div class="partner-details">
+                            <p class="role">Novia</p>
+                            <img src="./assets/novia.png" alt="Novia stiker" class="partner-image">
+                            <p class="name">Alejandra Roberto Machorro</p>
+                        </div>
+                        <div class="partner-details">
+                            <p class="role">Novio</p>
+                            <img src="./assets/novio.png" alt="Novio stiker" class="partner-image">
+                            <p class="name">Isaac Montes Flores</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="call-to-action">Acopañanos en nuestra celebracion</p>
+                <p class="waiting-message">¡Te Esperamos!</p>
             </div>
         </section>
         <!-- Novios caminando -->
