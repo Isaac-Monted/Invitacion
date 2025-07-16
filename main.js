@@ -94,31 +94,42 @@ function initGalleryAnimations() {
         return;
     }
 
-    // Aplica las clases iniciales (from-left o from-right) antes de que se vean
+    // Aplica las clases iniciales (from-left o from-right) y el estado oculto
     galleryItems.forEach((item, index) => {
-        if (index % 2 === 0) { // Elementos pares (0, 2, 4...) desde la izquierda
+        if (index % 2 === 0) { // Elementos pares (0, 2, 4...)
             item.classList.add('from-left');
-        } else { // Elementos impares (1, 3, 5...) desde la derecha
+            item.classList.add('even-item'); // Clase auxiliar para JS
+        } else { // Elementos impares (1, 3, 5...)
             item.classList.add('from-right');
+            item.classList.add('odd-item'); // Clase auxiliar para JS
         }
+        // No añadimos 'fade-in' aquí, solo las clases iniciales para que comiencen ocultas
     });
 
     // Opciones para el Intersection Observer
     const observerOptions = {
         root: null, // Observa el viewport como raíz
         rootMargin: '0px', // Sin margen adicional
-        threshold: 0.1 // Cuando el 10% del elemento es visible, activa la animación
+        threshold: 0.05 // Cuando el 10% del elemento es visible, activa la animación
     };
 
     // Callback que se ejecuta cuando los elementos cruzan el umbral de visibilidad
-    const observerCallback = (entries, observer) => {
+    const observerCallback = (entries) => { // 'observer' ya no es necesario aquí
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Si el elemento es visible, activa la animación final
                 entry.target.classList.add('fade-in');
-                // Removemos las clases de inicio para que solo quede 'fade-in'
+                // Al entrar en vista, removemos las clases de "entrada" para que 'fade-in' tome el control
                 entry.target.classList.remove('from-left', 'from-right');
-                observer.unobserve(entry.target); // Deja de observar este elemento una vez que se ha animado
+            } else {
+                // Si el elemento NO es visible (salió de la vista)
+                entry.target.classList.remove('fade-in'); // Oculta la imagen
+                // Reintroduce las clases de "entrada" para que vuelva a animarse al entrar
+                if (entry.target.classList.contains('even-item')) {
+                    entry.target.classList.add('from-left');
+                } else if (entry.target.classList.contains('odd-item')) {
+                    entry.target.classList.add('from-right');
+                }
             }
         });
     };
