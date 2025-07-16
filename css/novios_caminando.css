@@ -18,12 +18,18 @@
     box-sizing: border-box;
     z-index: 1000; /* Asegura que estén por encima de otros elementos */
     pointer-events: none; /* Permite hacer clic a través del contenedor si no hay interactividad aquí */
+    /* Añade una transición para el `top` y `transform` para que los cambios de JS sean suaves */
+    transition: transform 0.5s ease-out, top 0.5s ease-out, bottom 0.5s ease-out, opacity 0.5s ease-out;
+
+    opacity: 0;        /* Iniciar completamente transparente */
+    visibility: hidden; /* Asegurarse de que no sean interactivos ni ocupen espacio visible */
 }
 
 .walking-partner-wrapper {
     display: flex; /* Para centrar la imagen si es necesario, aunque en este caso la imagen ocupa todo el wrapper */
     justify-content: center;
     align-items: center;
+    transition: transform 0.5s ease-out;
     /* Ajusta el ancho si tus imágenes son muy grandes */
     /* flex-basis: 40%; para darles un ancho base */
 }
@@ -35,12 +41,24 @@
     /* Estas serán sobrescritas por JS */
 }
 
+.final-couple-destination {
+    width: 100%; /* Asegura que ocupe todo el ancho de su sección padre */
+    display: flex; /* Para que los novios se alineen correctamente dentro de él */
+    justify-content: center; /* Centrar los novios horizontalmente al finalizar */
+    align-items: flex-end; /* Alinear a la parte inferior (si son de diferente altura) */
+    position: relative; /* Importante para que los novios se posicionen dentro de él */
+    /* Puedes añadir padding o min-height si quieres que esta sección tenga un tamaño específico */
+    padding-bottom: 20px; /* Ejemplo de espacio debajo de los novios */
+    box-sizing: border-box;
+    min-height: 150px;
+}
+
 /* Opcional: Estilos para cuando las imágenes se encuentren y se muevan hacia arriba */
 /* Puedes definir una clase que JavaScript agregará/quitará */
 .walking-couple-container.scrolled-up {
     transition: transform 0.5s ease-out; /* Suaviza el movimiento al ir hacia arriba */
     transform: translateY(-100%); /* O la cantidad que necesites para moverlas hacia arriba */
     /* Considera cambiar el `position: fixed` a `position: absolute` cuando suban
-       para que formen parte del flujo normal del documento en ese punto.
-       Esto es más avanzado y podría requerir más lógica JS. */
+    para que formen parte del flujo normal del documento en ese punto.
+    Esto es más avanzado y podría requerir más lógica JS. */
 }

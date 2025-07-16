@@ -128,6 +128,11 @@
     height: 100vh; /* Contenedor ocupa toda la ventana */
 }
 
+.separador_de_secciones {
+    position: relative; /* Importante para el posicionamiento de sus hijos si se necesita */
+    height: 10vh; /* Puedes ajustar esto según qué tan alto quieres que sea el espacio para el efecto */
+}
+
 .contenedor_horizontal {
     display: flex; /* Activa Flexbox */
     justify-content: center; /* Centra horizontalmente */
