@@ -48,11 +48,35 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease-in-out;
 }
 
 .dress-code-item:hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Para el primer item (Hombres) */
+.dress-code-container .dress-code-item:nth-child(1).from-left {
+    transform: translateX(-100px); /* Desplazado 100px a la izquierda inicialmente */
+}
+
+/* Para el segundo item (Mujeres) */
+.dress-code-container .dress-code-item:nth-child(2).from-right {
+    transform: translateX(100px); /* Desplazado 100px a la derecha inicialmente */
+}
+
+/* Estado final de la animación (cuando JS añade 'fade-in') --- */
+.dress-code-item.fade-in {
+    opacity: 1;
+    transform: translateX(0) translateY(0); /* Vuelve a su posición normal (combina X e Y) */
+}
+
+/* Regla de hover cuando el item ya tiene 'fade-in' para mayor especificidad --- */
+.dress-code-item.fade-in:hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 

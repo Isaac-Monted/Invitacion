@@ -1,6 +1,9 @@
 // constantes
 const Fecha_boda = '8 de Noviembre';
 
+// Importaciones
+import * as animations from './animations.js';
+
 // Escucha el evento de carga del DOM
 document.addEventListener("DOMContentLoaded", () => {
     colocarHistoria1();
@@ -25,6 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Llamar a la funcion de animacion de galeria
     initGalleryAnimations();
+
+    // Llamar a la funcion de las animaciones externas
+    animations.AnimacionTarjetaEventos();
+    animations.AnimacionCodigoVestimenta();
 });
 
 function colocarHistoria1() {
@@ -143,9 +150,6 @@ function initGalleryAnimations() {
         observer.observe(item);
     });
 }
-
-// Llama a la función de inicialización cuando el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', initGalleryAnimations);
 
 // Funcion para el contador
 function actualizarContador() {

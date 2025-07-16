@@ -39,11 +39,34 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; /* Todas las tarjetas empiezan invisibles */
 }
 
 .event-card:hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Posiciones iniciales fuera de vista (aplicadas por JS) */
+.ceremony-card.from-left {
+    transform: translateX(-100px); /* Desplazada 100px a la izquierda inicialmente */
+}
+
+.celebration-card.from-right {
+    transform: translateX(100px); /* Desplazada 100px a la derecha inicialmente */
+}
+
+/* Estado final de la animación (cuando JS añade 'fade-in') */
+.event-card.fade-in {
+    opacity: 1;
+    transform: translateX(0) translateY(0);; /* Vuelve a su posición normal */
+}
+
+.event-card.fade-in:hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
