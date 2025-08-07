@@ -176,7 +176,7 @@ function initGalleryAnimations() {
 
 // Funcion para el contador
 function actualizarContador() {
-    const fechaBoda = new Date('2025-11-08T15:00:00'); // Fecha y hora de tu boda
+    const fechaBoda = new Date('2025-11-08T12:00:00'); // Fecha y hora de tu boda
     const ahora = new Date();
     
     // Diferencia en milisegundos
@@ -190,7 +190,7 @@ function actualizarContador() {
             contador.innerHTML = `
                 <span class="mensaje-agradecimiento">
                     ¡Gracias por haber sido parte de nuestro día especial! 💖<br>
-                    <small>15 de Noviembre 2025</small>
+                    <small>08 de Noviembre 2025</small>
                 </span>
             `;
         }

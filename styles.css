@@ -41,7 +41,7 @@
 /* Números grandes */
 .contador-numero {
     font-family: 'Arial', sans-serif;
-    font-size: 38px;
+    font-size: 38px; /*38px;*/
     font-weight: bold;
     color: var(--blanco);
     text-shadow: 0 0 15px var(--blanco);
@@ -58,7 +58,7 @@
 /* Mensaje del día del evento */
 #contador span {
     font-family: 'Edwardian Script ITC', cursive;
-    font-size: 50px;
+    font-size: 90px;
     color: var(--blanco);
     text-shadow: 0 0 20px var(--blanco);
     display: block;
@@ -67,7 +67,7 @@
 
 .mensaje-agradecimiento {
     font-family: 'Edwardian Script ITC', cursive;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     color: var(--blanco);
     text-align: center;
     line-height: 1.6;
@@ -75,7 +75,7 @@
 
 .mensaje-agradecimiento small {
     font-family: 'vivaldi';
-    font-size: 2rem;
+    font-size: 4rem;
     color: var(--blanco);
     display: block;
     margin-top: 10px;
@@ -83,7 +83,7 @@
 
 .mensaje-boda {
     font-family: 'Edwardian Script ITC', cursive;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     color: var(--blanco);
     text-align: center;
     line-height: 1.6;
@@ -92,10 +92,74 @@
 
 .mensaje-boda small {
     font-family: 'vivaldi';
-    font-size: 2rem;
+    font-size: 4rem;
     color: var(--blanco);
     display: block;
     margin-top: 10px;
+}
+
+@media(max-width: 760px){
+    .contador-numero {
+        font-size: 28px; /*38px;*/
+        text-shadow: 0 0 15px var(--blanco);
+    }
+
+    .contador-etiqueta {
+        font-size: 10px;
+    }
+
+    #contador span {
+        font-size: 60px;
+        text-shadow: 0 0 20px var(--blanco);
+    }
+
+    .mensaje-agradecimiento {
+        font-size: 3.5rem;
+    }
+
+    .mensaje-agradecimiento small {
+        font-size: 3rem;
+    }
+
+    .mensaje-boda {
+        font-size: 3.5rem;
+    }
+
+    .mensaje-boda small {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 430px){
+    .contador-numero {
+        font-size: 18px; /*38px;*/
+        text-shadow: 0 0 15px var(--blanco);
+    }
+
+    .contador-etiqueta {
+        font-size: 5px;
+    }
+
+    #contador span {
+        font-size: 40px;
+        text-shadow: 0 0 20px var(--blanco);
+    }
+
+    .mensaje-agradecimiento {
+        font-size: 2.5rem;
+    }
+
+    .mensaje-agradecimiento small {
+        font-size: 2rem;
+    }
+
+    .mensaje-boda {
+        font-size: 2.5rem;
+    }
+
+    .mensaje-boda small {
+        font-size: 2rem;
+    }
 }
 
 @keyframes brillo {
@@ -217,4 +281,17 @@
         transform: translate(15px, -5px) scale(0.8);
         opacity: 0.6;
     }
+}
+
+.fondoVolcanes{
+    /* 👇 Estas dos líneas centran el contenido */
+    /* justify-content: center;
+    align-items: center; */
+
+    /* Propiedades para la imagen de fondo */
+    background-image: url('./assets/volcanes2.png'); /* ⬅️ Aquí va la ruta a tu imagen */
+    background-repeat: no-repeat; /* La imagen no se repetirá */
+    background-position: center; /* La imagen se centrará */
+    background-size: contain; /* 👈 La imagen se ajustará sin cortarse */
+    background-attachment: fixed; /* 👇 Con esto la imagen se queda fija */
 }

@@ -5,6 +5,8 @@
     background-image: url('../assets/fondo-de-madera.jpg');
     text-align: center;
     overflow: hidden; /* Esto es crucial para que las imágenes salgan de la vista */
+    box-shadow: 10px 20px 10px rgba(65, 64, 64, 0.596);
+    border-radius: 15px;
 }
 
 .gallery-header {

@@ -2,10 +2,12 @@
 
 /* Sección de Padrinos */
 .godparents-section {
+    border-radius: 15px;
     padding: 60px 20px;
-    background-color: var(--fondo_pagina); /* #f4f2ee; Un color de fondo diferente para destacar */
+    background-color: var(--blanco); /* #f4f2ee; Un color de fondo diferente para destacar */
     text-align: center;
     overflow: hidden; /* Importante para el carrusel, oculta el desbordamiento */
+    box-shadow: 10px 20px 10px rgba(65, 64, 64, 0.596);
 }
 
 .godparents-content-wrapper {

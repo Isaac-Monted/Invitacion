@@ -6,6 +6,7 @@ body {
     margin: 0; /* Elimina cualquier margen predeterminado */
     padding: 0; /* Opcional, elimina el relleno predeterminado si lo hay */
     box-sizing: border-box; /* Asegura un cálculo consistente del tamaño */
+    overflow-x: hidden;
 }
 
 main {

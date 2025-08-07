@@ -7,6 +7,7 @@
     text-align: center;
     position: relative; /* Importante para que los novios se posicionen en relación a esta sección al final */
     z-index: 1; /* Asegura que esta sección esté por encima del contenedor de novios si suben sobre ella */
+    box-shadow: 10px 20px 10px rgba(65, 64, 64, 0.596);
 }
 
 .dress-code-title {

@@ -5,6 +5,7 @@
     padding: 60px 30px; /* Espaciado interno para la sección */
     background-color: #f8f8f8; /* Un fondo suave para diferenciarla */
     text-align: center;
+    box-shadow: 10px 20px 10px rgba(65, 64, 64, 0.596);
 }
 
 .section-title {

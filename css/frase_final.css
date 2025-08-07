@@ -3,10 +3,11 @@
 /* Sección de Frase Final */
 .final-phrase-section {
     padding: 80px 20px; /* Espaciado interno generoso */
-    background-color: rgba(0, 156, 140, 0.7); /* Un color de fondo suave, quizás el mismo que la sección de padrinos */
+    background-color: rgba(0, 156, 140); /* Un color de fondo suave, quizás el mismo que la sección de padrinos */
     text-align: center; /* Centra todo el contenido */
     overflow: hidden; /* Asegura que nada se desborde */
     border-radius: 1.2em;
+    box-shadow: 10px 20px 10px rgba(65, 64, 64, 0.596);
 }
 
 .final-phrase-content {

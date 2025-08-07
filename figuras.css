@@ -47,13 +47,27 @@
     text-align: center;
     justify-content: center; /* Centrar el texto */
     color: var(--deep_main); /* Color del texto */
-    font-size: 50px; /* Tamaño del texto */
+    font-size: 58px; /* Tamaño del texto */
     font-weight: bold; /* Estilo del texto */
     top: -170px;  /* Ajustamos para poner el texto más arriba */
     animation: pulso 1s infinite; /* Animación de pulso */
     z-index: 10;
     text-shadow: 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco); /* Brillo inicial */
     animation: iluminar 3s infinite, pulsoTexto 3s infinite; /* Animación para iluminar y pulsar el texto */
+}
+
+@media(max-width: 760px){
+  #Fecha_evento {
+      font-size: 38px; /* Tamaño del texto */
+      text-shadow: 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco); /* Brillo inicial */
+  }
+}
+
+@media(max-width: 430px){
+  #Fecha_evento {
+      font-size: 28px; /* Tamaño del texto */
+      text-shadow: 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco); /* Brillo inicial */
+  }
 }
 
   /* Animación de pulso */
