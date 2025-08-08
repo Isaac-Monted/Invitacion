@@ -1,5 +1,5 @@
 // constantes
-const Fecha_boda = '8 de Noviembre';
+const Fecha_boda = '8 de Noviembre del 2025';
 
 // Importaciones
 import * as animations from './animations.js';
@@ -58,7 +58,7 @@ function reproducirAudioAlScroll() {
 }
 
 function colocarHistoria1() {
-    const $Historia = `La historia que te voy a contar es muy especial, ya que se trata de un amor que empezó gracias a una coincidencia o un accidente que conectaría a dos personas que habían perdido la esperanza en el amor. pero todo esto cambiaria un 26 de diciembre cuando dos desconocidos se encontrarían el uno al otro sin pensar que llegarían a ser tan importantes el uno para el otro. Fue amor a primera vista, cada vez que ellos dos estaban juntos hacían del lugar algo único, sin importar donde o cuando, su compañía era más que suficiente.<br> No paso mucho tiempo cuando un 28 de enero decidirían por fin estar juntos<br>`;
+    const $Historia = `La historia que te voy a contar es muy especial, ya que se trata de un amor que comenzó gracias a una coincidencia —o un accidente— que conectaría a dos personas que habían perdido la esperanza en el amor. Pero todo esto cambiaría un 26 de diciembre del 2023, cuando dos desconocidos se encontrarían sin imaginar que llegarían a ser tan importantes el uno para el otro. Fue amor a primera vista. Cada vez que estaban juntos, hacían del lugar algo único; sin importar dónde ni cuándo, su compañía era más que suficiente.<br>No pasó mucho tiempo cuando, un 28 de enero del 2024, decidieron por fin estar juntos.<br>`;
 
     const contenedor = document.getElementById("Historia"); // Selecciona el contenedor
     const elementoP = document.createElement("p"); // Crea un elemento <p>
@@ -67,7 +67,7 @@ function colocarHistoria1() {
 };
 
 function colocarHistoria2() {
-    const $Historia = `Y desde hay empezaría a escribirse un sin fin de historias y momentos inolvidables, un 26 de enero tomarían la decisión de formalizar el compromiso pasando se ser novios a ser marido y mujer. Han pasado por muchos obstáculos y aunque no ha sido fácil llegar a este punto, hay algo de lo que si estoy seguro, su amor es inquebrantable y realmente quieren permanecer juntos por el resto de sus vidas. <br> desafortunadamente no te poder contar que es lo que sigue en esta historia ya que aún se está escribiendo, pero si te puedes ser partícipe de ella este ${Fecha_boda} que será el comienzo de un nuevo capítulo para estas dos personitas que se juraran amor eterno hasta que la muerte los separe.`;
+    const $Historia = `Y desde ahí comenzaría a escribirse un sinfín de historias y momentos inolvidables. Un 26 de enero del 2025 tomarían la decisión de formalizar su compromiso. El 02 de agosto del 2025 se casarían por el civil, dando así el primer paso hacia una vida juntos, pasando de ser novios a convertirse en marido y mujer. Han superado muchos obstáculos, y aunque no ha sido fácil llegar hasta este punto, hay algo de lo que sí estoy seguro: su amor es inquebrantable, y realmente desean permanecer juntos por el resto de sus vidas.<br>Desafortunadamente, no te puedo contar qué es lo que sigue en esta historia, ya que aún se está escribiendo. Pero sí puedes ser partícipe de ella este ${Fecha_boda}, que será el comienzo de un nuevo capítulo para estas dos personitas que se jurarán amor eterno hasta que la muerte los separe.`;
 
     const contenedor = document.getElementById("Historia2"); // Selecciona el contenedor
     const elementoP = document.createElement("p"); // Crea un elemento <p>
@@ -176,7 +176,7 @@ function initGalleryAnimations() {
 
 // Funcion para el contador
 function actualizarContador() {
-    const fechaBoda = new Date('2025-11-08T12:00:00'); // Fecha y hora de tu boda
+    const fechaBoda = new Date('2025-11-08T08:00:00'); // Fecha y hora de tu boda
     const ahora = new Date();
     
     // Diferencia en milisegundos
